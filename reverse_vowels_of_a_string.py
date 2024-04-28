@@ -1,21 +1,22 @@
-def reverse_vowels(s):
+def reverse_vowels(string):
     vowels = 'aeiouAEIOU'
-    s = list(s)
-    i, j = 0, len(s) - 1
+    string = list(string)
+    i, j = 0, len(string) - 1
 
     while i < j:
-        if s[i] not in vowels:
+        if string[i] not in vowels:
             i += 1
             continue
-        if s[j] not in vowels:
+        if string[j] not in vowels:
             j -= 1
             continue
 
         #swap
-        s[i], s[j] = s[j], s[i]
+        string[i], string[j] = string[j], string[i]
         i += 1
         j -= 1
 
-        return "".join(s)
+    return "".join(string)
     
-print(reverse_vowels("leetcode"))
+result = reverse_vowels("leetcode")
+print(result)
