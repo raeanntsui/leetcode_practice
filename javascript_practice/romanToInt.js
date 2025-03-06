@@ -17,10 +17,22 @@ function romanToInt(str) {
 
   let total = 0;
   let i = 0;
-
-  for (let i = 0; i < str.length; i++) {}
+  while (i < str.length) {
+    if (i + 1 < str.length) {
+      let pair = str[i] + str[i + 1];
+      if (dict[pair]) {
+        total += dict[pair];
+        i += 2;
+        continue;
+      }
+    }
+    total += dict[str[i]];
+    i += 1;
+  }
+  console.log("total", total);
+  //   return;
 }
 
 romanToInt("III");
-// romanToInt("LVIII");
-// romanToInt("MCMXCIV");
+romanToInt("LVIII");
+romanToInt("MCMXCIV");
